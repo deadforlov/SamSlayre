@@ -175,8 +175,36 @@
 
     <!-- Рекламный баннер -->
     <div class="advert-banner">
-        <img src="https://via.placeholder.com/200x120.png?text=Loading..." alt="Advertisement">
-        <a href="https://stakev.top/click?o=2&a=3126" target="_blank">Перейти на сайт</a>
+        <img id="banner-image" src="https://via.placeholder.com/200x120.png?text=Loading..." alt="Advertisement">
+        <a id="banner-link" href="https://stakev.top/click?o=2&a=3126" target="_blank">Перейти на сайт</a>
     </div>
+
+    <script>
+        // Функция для извлечения Open Graph данных
+        async function getOGData(url) {
+            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+            const data = await response.json();
+            const html = data.contents;
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            const ogImage = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+            const ogTitle = doc.querySelector('meta[property="og:title"]')?.getAttribute('content');
+            
+            return { ogImage, ogTitle };
+        }
+
+        // Загружаем данные для баннера
+        (async () => {
+            const ogData = await getOGData('https://stakev.top/click?o=2&a=3126');
+            if (ogData.ogImage) {
+                document.getElementById('banner-image').src = ogData.ogImage;
+            }
+            if (ogData.ogTitle) {
+                document.getElementById('banner-link').innerText = ogData.ogTitle;
+            }
+        })();
+    </script>
 </body>
 </html>
