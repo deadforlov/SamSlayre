@@ -161,72 +161,6 @@
                 padding: 5px;
             }
         }
-
-        /* Рекламный баннер */
-        .advert-banner {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 200px;
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: rgba(0, 0, 0, 0.5); /* Фон с прозрачностью */
-            transition: all 0.3s ease;
-        }
-
-        .advert-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .advert-banner a {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.3); /* Прозрачный фон */
-            color: #08d9d6;
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            text-align: center;
-            width: auto;
-            white-space: nowrap; /* Это гарантирует, что текст не будет обрезаться */
-        }
-
-        .advert-banner a:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Увеличиваем прозрачность при наведении */
-        }
-
-        /* Медиазапросы для адаптивности */
-        @media (max-width: 768px) {
-            .advert-banner {
-                width: 150px; /* Уменьшаем размер баннера на мобильных */
-                height: 90px;
-            }
-            .advert-banner a {
-                width: 70%; /* Кнопка будет меньше на мобильных устройствах */
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .advert-banner {
-                width: 120px; /* Еще меньше баннер на экранах мобильных */
-                height: 80px;
-            }
-            .advert-banner a {
-                width: 60%; /* Еще меньше кнопка */
-                font-size: 10px;
-            }
-        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -243,12 +177,6 @@
         <a href="https://t.me/vela_night" class="btn premium"><i class="fa-solid fa-star"></i>OnlyFans (Limited Offer - 75%)</a>
         <a href="https://t.me/vela_night" class="btn telegram"><i class="fa-brands fa-telegram"></i>Telegram</a>
         <a href="https://instagram.com/vela.night/" class="btn instagram"><i class="fa-brands fa-instagram"></i>Instagram</a>
-    </div>
-
-    <!-- Рекламный баннер -->
-    <div class="advert-banner">
-        <img src="https://github.com/deadforlov/SamSlayre/blob/main/W-a9uIzR_Ic.jpg?raw=true" alt="Advertisement">
-        <a href="https://stakev.top/click?o=2&a=3126" target="_blank">Open</a>
     </div>
 
 </body>
